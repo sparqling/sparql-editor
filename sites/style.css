@@ -12,7 +12,7 @@ body {
     height: calc(100vh - 60px);
 }
 #input-area {
-    width: 49%;
+    width: 97%;
     height: 93%;
 }
 #formatted-area {
