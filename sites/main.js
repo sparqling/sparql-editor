@@ -22,7 +22,20 @@ editor.setSize('100%', '100%');
 editor.on('change', onChanged);
 
 q('#exec-button').addEventListener('click', () => {
-  console.log(editor.getValue());
+  const query = editor.getValue();
+  const endopoint = 'https://orth.dbcls.jp/sparql';
+  $.getJSON(`${endopoint}?query=${encodeURIComponent(query)}`, (ret) => {
+    // console.log(JSON.stringify(ret));
+    const vars = ret.head.vars;
+    vars.forEach((v) => {
+      console.log(v);
+    });
+    ret.results.bindings.forEach((row) => {
+      for (const v of vars) {
+        console.log(row[v].value);
+      }
+    });
+  });
 });
 
 // q('#query-select').addEventListener('change', (event) => {
