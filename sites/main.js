@@ -1,15 +1,6 @@
 const q = document.querySelector.bind(document);
-let byProgram = false, editor, outputArea;
+let byProgram = false, editor;
 let timerId;
-
-function reformat(event, ui) {
-  try {
-    outputArea.setValue(spfmt(editor.getValue(), q('#indent-depth').value) + '\n');
-  } catch (e) {
-    console.log(e);
-    toastr.error('', 'SyntaxError', { preventDuplicates: true });
-  }
-}
 
 function onChanged(delta) {
   if (!byProgram) {
@@ -26,20 +17,9 @@ editor = CodeMirror.fromTextArea(q('#input-sparql'), {
   lineWrapping: true
 });
 
-outputArea = CodeMirror.fromTextArea(q('#formatted-sparql'), {
-  lineNumbers: true,
-  viewportMargin: Infinity,
-  lineWrapping: true,
-  readOnly: true
-});
-
 editor.setSize('100%', '100%');
 
-outputArea.setSize('100%', '100%');
-
 editor.on('change', onChanged);
-
-q('#indent-depth').addEventListener('change', onChanged);
 
 q('#query-select').addEventListener('change', (event) => {
   if (event.target.value === '') {
@@ -50,10 +30,6 @@ q('#query-select').addEventListener('change', (event) => {
       editor.setValue(response.data);
     });
   }
-});
-
-q('#copy-button').addEventListener('click', () => {
-  navigator.clipboard.writeText(outputArea.getValue());
 });
 
 document.addEventListener('DOMContentLoaded', function (event) {
