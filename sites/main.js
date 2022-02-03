@@ -21,16 +21,16 @@ editor.setSize('100%', '100%');
 
 editor.on('change', onChanged);
 
-q('#query-select').addEventListener('change', (event) => {
-  if (event.target.value === '') {
-    editor.setValue('SELECT * WHERE { ?s ?p ?o. } LIMIT 10');
-  } else {
-    let url = `https://raw.githubusercontent.com/sparqling/sparql-formatter/main/sparql11-query/${event.target.value}`;
-    axios.get(url).then((response) => {
-      editor.setValue(response.data);
-    });
-  }
-});
+// q('#query-select').addEventListener('change', (event) => {
+//   if (event.target.value === '') {
+//     editor.setValue('SELECT * WHERE { ?s ?p ?o. } LIMIT 10');
+//   } else {
+//     let url = `https://raw.githubusercontent.com/sparqling/sparql-formatter/main/sparql11-query/${event.target.value}`;
+//     axios.get(url).then((response) => {
+//       editor.setValue(response.data);
+//     });
+//   }
+// });
 
 document.addEventListener('DOMContentLoaded', function (event) {
   let url = `https://api.github.com/repos/sparqling/sparql-formatter/contents/sparql11-query`;
