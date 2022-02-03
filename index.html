@@ -56,31 +56,8 @@ WHERE {
 LIMIT 10</textarea>
                     </div>
                 </div>
-
-                <div id='formatted-area' class="mt-2 mr-2">
-                    <span class="ml-3 subheading">Formatted:</span>
-                    <div class="float-right">
-                        <span class="mr-1 text-muted">indent</span>
-                        <select id="indent-depth" class="text-muted rounded" style="width: 75px">
-                            <option>2</option>
-                            <option>4</option>
-                        </select>
-                    </div>
-
-                    <div class="mt-1 text-container">
-                        <button id="copy-button" class="border-0 rounded">
-                            <i class="far fa-copy text-muted small"></i>
-                            <span class="small text-muted">Copy</span>
-                        </button>
-                        <textarea id='formatted-sparql'>
-SELECT *
-WHERE {
-  ?s ?p ?o .
-}
-LIMIT 10</textarea>
-                    </div>
-                </div>
             </div>
+
         </div>
         <script src='https://cdn.jsdelivr.net/gh/sparqling/sparql-formatter@main/js/formatter.min.js'></script>
         <script src='./sites/main.js'></script>
