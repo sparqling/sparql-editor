@@ -21,6 +21,10 @@ editor.setSize('100%', '100%');
 
 editor.on('change', onChanged);
 
+q('#exec-button').addEventListener('click', () => {
+  console.log(editor.getValue());
+});
+
 // q('#query-select').addEventListener('change', (event) => {
 //   if (event.target.value === '') {
 //     editor.setValue('SELECT * WHERE { ?s ?p ?o. } LIMIT 10');
