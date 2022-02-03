@@ -1,1 +1,1 @@
-# sparql-editor
+# SPARQL editor
