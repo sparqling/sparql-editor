@@ -36,22 +36,22 @@ q('#exec-button').addEventListener('click', () => {
 //   }
 // });
 
-document.addEventListener('DOMContentLoaded', function (event) {
-  let url = `https://api.github.com/repos/sparqling/sparql-formatter/contents/sparql11-query`;
-  axios.get(url).then((response) => {
-    const selectNode = q('#query-select');
-    selectNode.innerHTML = '';
+// document.addEventListener('DOMContentLoaded', function (event) {
+//   let url = `https://api.github.com/repos/sparqling/sparql-formatter/contents/sparql11-query`;
+//   axios.get(url).then((response) => {
+//     const selectNode = q('#query-select');
+//     selectNode.innerHTML = '';
 
-    let firstOption = document.createElement('option');
-    firstOption.innerText = '';
-    selectNode.appendChild(firstOption);
+//     let firstOption = document.createElement('option');
+//     firstOption.innerText = '';
+//     selectNode.appendChild(firstOption);
 
-    for (let object of response.data) {
-      if (object.name.endsWith('.rq')) {
-        let option = document.createElement('option');
-        option.innerText = object.name;
-        selectNode.appendChild(option);
-      }
-    }
-  });
-});
+//     for (let object of response.data) {
+//       if (object.name.endsWith('.rq')) {
+//         let option = document.createElement('option');
+//         option.innerText = object.name;
+//         selectNode.appendChild(option);
+//       }
+//     }
+//   });
+// });
