@@ -74,3 +74,8 @@ span .syntax-error {
 span .syntax-error-line {
     background: rgba(255, 0, 0, 0.4);
 }
+.btn-pale-blue {
+    background-color: rgba(50, 100, 150, 0.7);
+    color:rgb(245, 245, 245);
+    border-color: rgba(160, 159, 159, 0);
+}
